@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - Stock-sage
+name: Build and deploy Python app to Azure Web App - stock-sage
 
 on:
   push:
@@ -65,14 +65,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_68B19B1EA13E498A87379A1904ABE07D }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B8F9A9DF0C2B4B1386BA16FA1DB3090C }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_251EEF4562F449CFB7D1D6E69412BCF4 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D1426C723C6640D09E577C9018389055 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6134C6F841ED4FD1BAE08DB245D8C59E }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6CC5E35B238F46529C1FDFB86B67DC12 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'Stock-sage'
+          app-name: 'stock-sage'
           slot-name: 'Production'
           
