@@ -91,7 +91,7 @@ def render_news_section(ticker):
     }
 
     .news-card {
-        background-color: rgb(49, 51, 63);
+        background-color: #f0f2f6;
         padding: 20px;
         border-radius: 5px;
         box-sizing: border-box;
