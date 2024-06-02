@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
@@ -5,9 +6,11 @@ from stocknews import StockNews
 import requests
 from datetime import datetime, timedelta
 
+
 # fetching data from backed
 def fetch_data_from_api(ticker):
-    url = f'https://functionapp456.azurewebsites.net/api/pred_{ticker}?code=U0NLQWoX9y_znGknmx81cEK0-BF7wCD9YCNNQCrnzRnVAzFun4J0hw%3D%3D'  # Endpoint to fetch data for a given ticker
+    code = os.environ['APICODE']
+    url = f'https://functionapp456.azurewebsites.net/api/pred_{ticker}?code={code}'  # Endpoint to fetch data for a given ticker
     response = requests.get(url)
     if response.status_code == 200:
         return response.json()
